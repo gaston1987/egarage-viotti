@@ -5,9 +5,9 @@ function App () {
   return (
     <div>
       <Navbar />
-      <container>
-        <Cardhome />
-      </container>
+
+      <Cardhome />
+
 
     </div>
   );
