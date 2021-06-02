@@ -65,7 +65,7 @@ export default function RecipeReviewCard () {
             />
             <CardMedia
                 className={classes.media}
-                image="/public/images/logo192.png"
+                image="./public/images/logo192.png"
                 title="Card HOME"
             />
             <CardContent>

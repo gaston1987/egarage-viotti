@@ -5,7 +5,10 @@ function App () {
   return (
     <div>
       <Navbar />
-      <Cardhome />
+      <container>
+        <Cardhome />
+      </container>
+
     </div>
   );
 }
