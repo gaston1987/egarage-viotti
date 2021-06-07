@@ -6,8 +6,9 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
+import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -116,8 +117,7 @@ export default function PrimarySearchAppBar () {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={handleMenuClose}>Perfil</MenuItem>
-            <MenuItem onClick={handleMenuClose}>Mi Cuenta</MenuItem>
+
         </Menu>
     );
 
@@ -162,6 +162,13 @@ export default function PrimarySearchAppBar () {
         </Menu>
     );
 
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
     return (
         <div className={classes.grow}>
             <AppBar position="static">
@@ -176,7 +183,24 @@ export default function PrimarySearchAppBar () {
                     </IconButton>
                     <Typography className={classes.title} variant="h6" noWrap>
                         e-Garage
-          </Typography>
+                    </Typography>
+                    <Button color="inherit">INICIO</Button>
+                    <Button color="inherit">SOBRE NOSOTROS</Button>
+                    <Button color="inherit" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                        CATEGORIAS
+                    </Button>
+                    <Menu
+                        id="simple-menu"
+                        anchorEl={anchorEl}
+                        keepMounted
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}
+                    >
+                        <MenuItem onClick={handleClose}>Venta de Garage</MenuItem>
+                        <MenuItem onClick={handleClose}>Electrónica</MenuItem>
+                        <MenuItem onClick={handleClose}>Gamer</MenuItem>
+                    </Menu>
+
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon />
