@@ -1,12 +1,14 @@
 import Navbar from './components/navbar'
-import Cardhome from './components/cardHome'
+
+import ItemListContainer from './components/ItemListContainer'
 
 
 function App () {
   return (
     <div>
       <Navbar />
-      <Cardhome />
+
+      <ItemListContainer />
 
     </div>
 
